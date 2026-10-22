@@ -47,12 +47,12 @@ label{font-size:12px;color:var(--mu);display:block;margin-bottom:8px;font-weight
 .ring .tr{stroke:var(--in)}
 .ring .pg{stroke:url(#g);stroke-dasharray:326.7;stroke-dashoffset:326.7;transition:stroke-dashoffset 1s cubic-bezier(.3,.9,.3,1)}
 .ring .ct{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
-.ring .ct b{font-size:26px}.ring .ct small{font-size:11px;color:var(--mu)}
+.ring .ct b{font-size:28px;font-weight:800;background:linear-gradient(135deg,#7dd3fc,#3b82f6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 0 8px rgba(56,189,248,.45))}.ring .ct small{font-size:12px;font-weight:700;color:#7dd3fc;letter-spacing:.3px}
 .stats{display:grid;gap:8px}
 .st{background:var(--in);border-radius:14px;padding:10px 12px}
 .st small{display:block;font-size:11px;color:var(--mu);margin-bottom:2px}
 .st b{font-size:clamp(16px,4.6vw,20px);font-variant-numeric:tabular-nums}
-.st.g b{color:var(--ac2)}
+.st.g b{color:#22c55e}.st.r b{color:#ef4444}
 .st{min-width:0}.st b{display:block;overflow-wrap:anywhere}.amt{min-width:0;overflow-wrap:anywhere}
 .row{padding:10px 0;border-bottom:1px solid var(--bd);animation:up .45s both;animation-delay:calc(var(--i)*55ms)}
 .row:last-child{border:0}
@@ -91,7 +91,7 @@ label{font-size:12px;color:var(--mu);display:block;margin-bottom:8px;font-weight
 <div class="ct"><b id="tp">0%</b><small>Used Fund</small></div>
 </div>
 <div class="stats">
-<div class="st"><small>Total Used</small><b id="tu">₹0</b></div>
+<div class="st r"><small>Total Used</small><b id="tu">₹0</b></div>
 <div class="st g"><small>Remaining Fund</small><b id="rm">₹0</b></div>
 </div>
 </div>
