@@ -93,6 +93,8 @@ label{font-size:12px;color:var(--mu);display:block;margin-bottom:8px;font-weight
 .chip:active{transform:translateY(4px);box-shadow:0 0 0 #02050f,0 2px 4px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1)}
 .inp{box-shadow:inset 0 5px 12px rgba(0,0,0,.85),0 8px 18px rgba(212,175,55,.22),0 0 0 1px rgba(255,215,0,.15)}
 .pc{box-shadow:inset 0 3px 7px rgba(0,0,0,.7)}
+.pw{position:relative;display:block}.pw .pc{width:100%;padding-right:24px;-moz-appearance:textfield}.pw .pc::-webkit-inner-spin-button,.pw .pc::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.pw em{position:absolute;right:9px;top:50%;transform:translateY(-50%);font-style:normal;font-weight:800;font-size:14px;color:#38bdf8;pointer-events:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -152,7 +154,7 @@ document.getElementById('cnt').textContent=pcts.length+' levels';
 pcts.forEach(function(p,i){
 var d=document.createElement('div');d.className='row';d.style.setProperty('--i',i);
 var h=hue(i);
-d.innerHTML='<div class="l1"><span class="badge" style="background:linear-gradient(135deg,hsl('+h+' 80% 58%),hsl('+(h+25)+' 85% 55%))">Level '+(i+1)+'</span><input class="pc" type="number" step="0.01" inputmode="decimal" value="'+p+'" data-i="'+i+'"><span class="amt">₹0</span></div><div class="bar"><i style="background:linear-gradient(90deg,hsl('+h+' 80% 62%),hsl('+(h+25)+' 85% 58%))"></i></div>';
+d.innerHTML='<div class="l1"><span class="badge" style="background:linear-gradient(135deg,hsl('+h+' 80% 58%),hsl('+(h+25)+' 85% 55%))">Level '+(i+1)+'</span><span class="pw"><input class="pc" type="number" step="0.01" inputmode="decimal" value="'+p+'" data-i="'+i+'"><em>%</em></span><span class="amt">₹0</span></div><div class="bar"><i style="background:linear-gradient(90deg,hsl('+h+' 80% 62%),hsl('+(h+25)+' 85% 58%))"></i></div>';
 r.appendChild(d)});
 [].forEach.call(r.querySelectorAll('.pc'),function(x){x.oninput=function(){pcts[+x.dataset.i]=parseFloat(x.value)||0;calc()}})}
 function calc(){
