@@ -164,7 +164,7 @@ pcts.forEach(function(p,i){
 var a=fund*p/100;tot+=a;
 setTimeout(function(){rs[i].querySelector('.bar i').style.width=(p/max*100)+'%'},60);
 tween(rs[i].querySelector('.amt'),a,inr)});
-var tp=pcts.reduce(function(s,x){return s+x},0);
+var tp=pcts.reduce(function(s,x){return s+x},0);if(fund<=0)tp=0;document.getElementById('pg').style.opacity=tp>0?1:0;
 tween(document.getElementById('tp'),tp,function(v){return (Math.round(v*100)/100)+'%'});
 tween(document.getElementById('tu'),tot,inr);
 tween(document.getElementById('rm'),fund-tot,inr);
